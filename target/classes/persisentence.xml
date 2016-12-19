@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="test">
+        <class>com.adneom.trm.domain.User</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://tri-server.database.windows.net:1433;DatabaseName=TRM;"/>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="javax.persistence.jdbc.user" value="abrasseur"/>
+            <property name="javax.persistence.jdbc.password" value="Adneom4Life"/>
+        </properties>
+    </persistence-unit>
+</persistence>

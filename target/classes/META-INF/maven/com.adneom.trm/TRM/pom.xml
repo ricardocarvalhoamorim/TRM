@@ -28,11 +28,21 @@
     <artifactId>javax.inject</artifactId>
     <version>1</version>
 </dependency>
+<dependency>
+    <groupId>javax.persistence</groupId>
+    <artifactId>persistence-api</artifactId>
+    <version>1.0.2</version>
+</dependency>
  <dependency>
      	<groupId>com.microsoft.sqlserver</groupId>
      	<artifactId>sqljdbc42</artifactId>
      	<version>6.0</version>
      </dependency>
+     <dependency>
+    <groupId>com.codahale.metrics</groupId>
+    <artifactId>metrics-core</artifactId>
+    <version>3.0.2</version>
+</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -40,4 +50,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
 </project>

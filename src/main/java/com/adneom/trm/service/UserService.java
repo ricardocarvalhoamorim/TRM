@@ -14,7 +14,7 @@ public class UserService {
 	
 
 	public boolean getAuthenticate(String name, String pass) {
-		return userRepository.Authenticate(name, pass);
+		return userRepository.Authenticate2(name, pass);
 	}
 
 }

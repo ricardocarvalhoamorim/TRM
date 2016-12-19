@@ -2,8 +2,10 @@ package com.adneom.trm.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@Entity
 @Table
 public class User implements Serializable {
 	
@@ -12,48 +14,48 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int Id;
-	private String Name;
-	private String Email;
-	private String Telephone;
-	private String Password;
-	private String Tokken;
+	private int id;
+	private String name;
+	private String email;
+	private String telephone;
+	private String password;
+	private String tokken;
 	
 	public int getId() {
-		return Id;
+		return this.id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getName() {
-		return Name;
+		return this.name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public String getEmail() {
-		return Email;
+		return this.email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getTelephone() {
-		return Telephone;
+		return this.telephone;
 	}
 	public void setTelephone(String telephone) {
-		Telephone = telephone;
+		this.telephone = telephone;
 	}
 	public String getPassword() {
-		return Password;
+		return this.password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	public String getTokken() {
-		return Tokken;
+		return this.tokken;
 	}
 	public void setTokken(String tokken) {
-		Tokken = tokken;
+		this.tokken = tokken;
 	}
 
 }
