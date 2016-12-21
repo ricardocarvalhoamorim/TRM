@@ -14,7 +14,7 @@ import com.adneom.trm.config.ConfigDBProperties;
 
 
 @Repository
-public class UserRepositoryy {
+public class UserRepository {
 
 	
 	
