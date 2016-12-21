@@ -1,0 +1,13 @@
+com/adneom/trm/service/UserService.class
+com/adneom/trm/repository/BusinessManagerRepository.class
+com/adneom/trm/repository/ConsultantRepository.class
+com/adneom/trm/repository/UserRepositoryy.class
+com/adneom/trm/config/ConfigDBProperties.class
+com/adneom/trm/domain/BusinessManager.class
+com/adneom/trm/domain/Consultant.class
+com/adneom/trm/domain/Client.class
+com/adneom/trm/Application.class
+com/adneom/trm/repository/MissionRepository.class
+com/adneom/trm/web/rest/AuthenticatieResource.class
+com/adneom/trm/repository/ClientRepository.class
+com/adneom/trm/domain/Mission.class

@@ -4,13 +4,13 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.adneom.trm.repository.UserRepository;
+import com.adneom.trm.repository.UserRepositoryy;
 
 @Service
 public class UserService {
 	
 	@Inject
-	private UserRepository userRepository;	
+	private UserRepositoryy userRepository;	
 	
 
 	public boolean getAuthenticate(String name, String pass) {

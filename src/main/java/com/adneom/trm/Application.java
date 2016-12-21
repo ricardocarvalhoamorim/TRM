@@ -10,12 +10,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.autoconfigure.*;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
-@ComponentScan(basePackages = {"com.adneom.trm"})
+//@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
+//@ComponentScan(basePackages = {"com.adneom.trm"})
 public class Application {
 	
 	public static void main (String[] args) throws Exception{
-		SpringApplication.run(Application.class);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

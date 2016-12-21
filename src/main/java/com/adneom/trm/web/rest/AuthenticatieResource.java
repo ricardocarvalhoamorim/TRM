@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.adneom.trm.domain.User;
+import com.adneom.trm.domain.BusinessManager;
 import com.adneom.trm.service.*;
-import com.codahale.metrics.annotation.Timed;
+//import com.codahale.metrics.annotation.Timed;
 
-@RestController
-@RequestMapping("/api")
+//@RestController
+//@RequestMapping("/api")
 public class AuthenticatieResource {
 	
 	private final Logger log = LoggerFactory.getLogger(AuthenticatieResource.class);
@@ -30,8 +30,8 @@ public class AuthenticatieResource {
 	private UserService userService;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	@Timed
-	public ResponseEntity<HttpStatus> isAuthenticated(@RequestBody User user) {
+//	@Timed
+	public ResponseEntity<HttpStatus> isAuthenticated(@RequestBody BusinessManager user) {
 		log.debug("REST request to check if the current user is authenticated");
 		System.out.println("resource"+ user.getName());
 		if(userService.getAuthenticate(user.getName(),user.getPassword())){
