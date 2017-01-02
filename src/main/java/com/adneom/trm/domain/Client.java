@@ -18,7 +18,26 @@ public class Client implements Serializable {
 	@Id
 	private Integer id;
 	private String name;
+	private String address;
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	private String contact;
+	private String email;
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@OneToMany(mappedBy = "client")
 	private List<Mission> missions;
 

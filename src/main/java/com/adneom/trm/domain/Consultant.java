@@ -13,6 +13,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "consultant")
@@ -39,6 +42,10 @@ public class Consultant implements Serializable {
 	private BusinessManager businessManager;
 	@OneToMany(mappedBy = "consultant")
 	private List<Mission> missions;
+	@Transient //field will not be mapped to the DB
+	private String initials;
+
+
 
 	public Integer getId() {
 		return id;
@@ -72,6 +79,7 @@ public class Consultant implements Serializable {
 		this.contact = contact;
 	}
 
+	@JsonProperty("package")
 	public Integer getPackag() {
 		return packag;
 	}
@@ -126,6 +134,14 @@ public class Consultant implements Serializable {
 
 	public void setMissions(List<Mission> missions) {
 		this.missions = missions;
+	}
+
+	public String getInitials() {
+		return "INI";
+	}
+
+	public void setInitials(String initials) {
+		this.initials = initials;
 	}
 
 }
