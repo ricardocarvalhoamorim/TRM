@@ -40,8 +40,9 @@ public class Consultant implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "bm_id")
 	private BusinessManager businessManager;
+	// TODO ELS: include businessmanager name  - transient property
 	@OneToMany(mappedBy = "consultant")
-	private List<Mission> missions;
+	private List<Mission> missions; //TODO ELS also delete mission when consultant is deleted
 	@Transient //field will not be mapped to the DB
 	private String initials;
 
@@ -137,7 +138,7 @@ public class Consultant implements Serializable {
 	}
 
 	public String getInitials() {
-		return "INI";
+		return Helper.getInitials(getName());
 	}
 
 	public void setInitials(String initials) {
