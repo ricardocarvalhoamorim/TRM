@@ -27,7 +27,7 @@ public class Consultant implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private Integer id;
 	private String name;
 	private String email;
 	private String contact;
@@ -47,11 +47,11 @@ public class Consultant implements Serializable {
 
 
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

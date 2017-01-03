@@ -20,7 +20,7 @@ public class Mission implements Serializable {
 	private static final long serialVersionUID = -2012004661376613812L;
 
 	@Id
-	private Long id;
+	private Integer id;
 	@Column(name="start_date")
 	private Date startDate;
 	@Column(name="end_date")
@@ -36,11 +36,11 @@ public class Mission implements Serializable {
 	@JoinColumn(name = "consultant_id")
 	private Consultant consultant;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
