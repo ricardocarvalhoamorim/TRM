@@ -25,7 +25,7 @@ public class BusinessManager implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "id")
-	private Integer id;
+	private Long id;
 	@Column(name = "name")
 	private String name;
 	@Column(name = "email")
@@ -43,7 +43,7 @@ public class BusinessManager implements Serializable {
 	@OneToMany(mappedBy = "businessManager")
 	private List<Consultant> consultants;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -104,7 +104,7 @@ public class BusinessManager implements Serializable {
 		this.active = active;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
