@@ -45,8 +45,18 @@ public class Consultant implements Serializable {
 	private List<Mission> missions; //TODO ELS also delete mission when consultant is deleted
 	@Transient //field will not be mapped to the DB
 	private String initials;
+	@Transient
+	private Integer businessManagerId;
 
 
+
+	public Integer getBusinessManagerId() {
+		return this.businessManager.getId();
+	}
+
+	public void setBusinessManagerId(Integer businessManagerId) {
+		this.businessManagerId = businessManagerId;
+	}
 
 	public Integer getId() {
 		return id;
