@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "mission")
@@ -35,6 +36,17 @@ public class Mission implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "consultant_id")
 	private Consultant consultant;
+	
+	@Transient
+	private Integer consultantId;
+
+	public Integer getConsultantId() {
+		return this.consultant.getId();
+	}
+
+	public void setConsultantId(Integer consultantId) {
+		this.consultantId = consultantId;
+	}
 
 	public Integer getId() {
 		return id;
