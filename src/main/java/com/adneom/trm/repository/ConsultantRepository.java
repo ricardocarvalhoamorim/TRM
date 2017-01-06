@@ -4,7 +4,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.adneom.trm.domain.Consultant;
 
-public interface ConsultantRepository extends PagingAndSortingRepository<Consultant, Integer> {
+public interface ConsultantRepository extends PagingAndSortingRepository<Consultant, Integer>/*, ConsultantCustomRepository */{
 
 	
 //	List<User> findByName(@Param("name") String name);

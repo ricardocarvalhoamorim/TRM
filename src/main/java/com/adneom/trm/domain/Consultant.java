@@ -20,14 +20,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity
 @Table(name = "consultant")
 public class Consultant implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1932053347734772060L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
+	
 	private String name;
 	private String email;
 	private String contact;
@@ -37,18 +36,19 @@ public class Consultant implements Serializable {
 	private String languages;
 	private Boolean hasCar;
 	private Boolean internal;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "bm_id")
 	private BusinessManager businessManager;
-	// TODO ELS: include businessmanager name  - transient property
-	@OneToMany(mappedBy = "consultant")
-	private List<Mission> missions; //TODO ELS also delete mission when consultant is deleted
+	
+	@OneToMany(mappedBy = "consultant")  //, orphanRemoval = true
+	private List<Mission> missions; 
+	
 	@Transient //field will not be mapped to the DB
 	private String initials;
+
 	@Transient
 	private Integer businessManagerId;
-
-
 
 	public Integer getBusinessManagerId() {
 		return this.businessManager.getId();
