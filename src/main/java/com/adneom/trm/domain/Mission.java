@@ -38,6 +38,16 @@ public class Mission implements Serializable {
 	@JoinColumn(name = "consultant_id")
 	private Consultant consultant;
 	
+	private int cost;
+	
+	public int getCost() {
+		return cost;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
 	@Transient
 	private Integer consultantId;
 
