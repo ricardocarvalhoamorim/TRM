@@ -49,6 +49,17 @@ public class Consultant implements Serializable {
 
 	@Transient
 	private Integer businessManagerId;
+	
+	private String skills;
+	
+	public String getSkills() {
+		return skills;
+	}
+
+	public void setSkills(String skills) {
+		this.skills = skills;
+	}
+
 
 	public Integer getBusinessManagerId() {
 		return this.businessManager.getId();
