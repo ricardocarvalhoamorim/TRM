@@ -1,7 +1,11 @@
 package com.adneom.trm.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+
+/**
+ * SQL Date is used since no time is necessary.
+ */
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,17 +27,25 @@ public class Mission implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
+
 	@Column(name="start_date")
 	private Date startDate;
+	
+	// @JsonFormat(pattern="yyyy-MM-dd")
 	@Column(name="end_date")
 	private Date endDate;
+	
 	private String role;
+	
 	@Column(name="selling_price")
 	private Integer sellingPrice;
+
 	private String country;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "client_id")
 	private Client client;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "consultant_id")
 	private Consultant consultant;
