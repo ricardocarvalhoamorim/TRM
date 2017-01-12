@@ -15,6 +15,9 @@ import com.adneom.trm.domain.Helper;
  * Since {@link Consultant} and {@link BusinessManager} shared some information, this class Person was created.
  * It contains the shared fields, but is not mapped to the database and it cannot be used in queries. 
  * 
+ * Warning : For some reason, this class was not allowed to be in the package com.adneom.trm.domain , which is
+ * why it is in a separate package. If it was in the same package, hibernate could not map this class.
+ * 
  * @author Els De Swaef
  */
 @MappedSuperclass
