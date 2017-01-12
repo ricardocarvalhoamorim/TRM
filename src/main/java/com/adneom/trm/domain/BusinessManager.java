@@ -1,67 +1,38 @@
 package com.adneom.trm.domain;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.adneom.trm.base.Person;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "businessmanager")
-public class BusinessManager implements Serializable {
+public class BusinessManager extends Person {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -5176533999279186387L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "id")
-	private Integer id;
-	@Column(name = "name")
-	private String name;
-	@Column(name = "email")
-	private String email;
 	@Column(name = "contact")
 	private String telephone;
+	
 	@Column(name = "password")
 	private String password;
+	
 	@Column(name = "target")
 	private Integer target;
+	
 	@Column(name = "unit_manager")
 	private Boolean unitManager;
+	
 	@Column(name = "active")
 	private Boolean active;
+	
 	@OneToMany(mappedBy = "businessManager")
 	private List<Consultant> consultants;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public String getTelephone() {
 		return telephone;
@@ -102,10 +73,6 @@ public class BusinessManager implements Serializable {
 
 	public void setActive(Boolean active) {
 		this.active = active;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public List<Consultant> getConsultants() {

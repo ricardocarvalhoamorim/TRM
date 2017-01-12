@@ -1,37 +1,29 @@
 package com.adneom.trm.domain;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
+import com.adneom.trm.base.Person;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "consultant")
-public class Consultant implements Serializable {
+public class Consultant extends Person {
 
 	private static final long serialVersionUID = 1932053347734772060L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
-	
-	private String name;
-	private String email;
 	private String contact;
+	
 	@Column(name = "package")
 	private Integer packag;
+	
 	private String hr;
 	private String languages;
 	private Boolean hasCar;
@@ -44,12 +36,6 @@ public class Consultant implements Serializable {
 	@OneToMany(mappedBy = "consultant")  //, orphanRemoval = true
 	private List<Mission> missions; 
 	
-	@Transient //field will not be mapped to the DB
-	private String initials;
-
-	@Transient
-	private Integer businessManagerId;
-	
 	private String skills;
 	
 	public String getSkills() {
@@ -60,37 +46,8 @@ public class Consultant implements Serializable {
 		this.skills = skills;
 	}
 
-
 	public Integer getBusinessManagerId() {
 		return this.businessManager.getId();
-	}
-
-	public void setBusinessManagerId(Integer businessManagerId) {
-		this.businessManagerId = businessManagerId;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getContact() {
@@ -156,14 +113,6 @@ public class Consultant implements Serializable {
 
 	public void setMissions(List<Mission> missions) {
 		this.missions = missions;
-	}
-
-	public String getInitials() {
-		return Helper.getInitials(getName());
-	}
-
-	public void setInitials(String initials) {
-		this.initials = initials;
 	}
 
 }
