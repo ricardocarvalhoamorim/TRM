@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.*;
 
 @SpringBootApplication
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
-//@ComponentScan(basePackages = {"com.adneom.trm"})
+@ComponentScan(basePackages = {"com.adneom.trm"})
 public class Application {
 	
 	public static void main (String[] args) throws Exception{

@@ -55,6 +55,14 @@ public class Mission implements Serializable {
 	public int getCost() {
 		return cost;
 	}
+	
+	public String getClientName() {
+		return getClient().getName();
+	}
+	
+	public Integer getClientId() {
+		return getClient().getId();
+	}
 
 	public void setCost(int cost) {
 		this.cost = cost;
