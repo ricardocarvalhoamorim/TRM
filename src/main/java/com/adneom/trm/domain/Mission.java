@@ -142,4 +142,24 @@ public class Mission implements Serializable {
 	public void setConsultant(Consultant consultant) {
 		this.consultant = consultant;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (! (obj instanceof Mission)) {
+			return false;
+		}
+		Mission other = (Mission) obj;
+		return this.getId().equals(other.getId());
+	}
+	
+	//Idea from effective Java : Item 9
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + getId().hashCode();
+        return result;
+    }
 }

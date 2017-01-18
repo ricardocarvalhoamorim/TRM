@@ -2,6 +2,7 @@ package com.adneom.trm.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -33,7 +34,7 @@ public class Consultant extends Person {
 	@JoinColumn(name = "bm_id")
 	private BusinessManager businessManager;
 	
-	@OneToMany(mappedBy = "consultant")  //, orphanRemoval = true
+	@OneToMany(mappedBy = "consultant", cascade=CascadeType.ALL, orphanRemoval = true)
 	private List<Mission> missions; 
 	
 	private String skills;
@@ -114,5 +115,26 @@ public class Consultant extends Person {
 	public void setMissions(List<Mission> missions) {
 		this.missions = missions;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (! (obj instanceof Consultant)) {
+			return false;
+		}
+		Consultant other = (Consultant) obj;
+		return this.getId().equals(other.getId());
+	}
+	
+	//Idea from effective Java : Item 9
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + getId().hashCode();
+        return result;
+    }
+
 
 }
