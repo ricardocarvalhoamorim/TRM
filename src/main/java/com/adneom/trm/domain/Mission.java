@@ -1,7 +1,6 @@
 package com.adneom.trm.domain;
 
 import java.io.Serializable;
-
 /**
  * SQL Date is used since no time is necessary.
  */
@@ -16,7 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name = "mission")
@@ -68,15 +66,12 @@ public class Mission implements Serializable {
 		this.cost = cost;
 	}
 
-	@Transient
-	private Integer consultantId;
-
 	public Integer getConsultantId() {
-		return this.consultant.getId();
+		return getConsultant().getId();
 	}
-
-	public void setConsultantId(Integer consultantId) {
-		this.consultantId = consultantId;
+	
+	public Integer getBusinessManagerId() {
+		return getConsultant().getBusinessManagerId();
 	}
 
 	public Integer getId() {
