@@ -54,24 +54,8 @@ public class Mission implements Serializable {
 		return cost;
 	}
 	
-	public String getClientName() {
-		return getClient().getName();
-	}
-	
-	public Integer getClientId() {
-		return getClient().getId();
-	}
-
 	public void setCost(int cost) {
 		this.cost = cost;
-	}
-
-	public Integer getConsultantId() {
-		return getConsultant().getId();
-	}
-	
-	public Integer getBusinessManagerId() {
-		return getConsultant().getBusinessManagerId();
 	}
 
 	public Integer getId() {
@@ -130,12 +114,36 @@ public class Mission implements Serializable {
 		this.client = client;
 	}
 
+	public String getClientName() {
+		return getClient().getName();
+	}
+	
+	public Integer getClientId() {
+		return getClient().getId();
+	}
+	
 	public Consultant getConsultant() {
 		return consultant;
 	}
 
 	public void setConsultant(Consultant consultant) {
 		this.consultant = consultant;
+	}
+
+	public Integer getConsultantId() {
+		return getConsultant().getId();
+	}
+	
+	public Integer getBusinessManagerId() {
+		return getConsultant().getBusinessManagerId();
+	}
+
+	public Integer getMargin() {
+		return Math.round(getCost() - getSellingPrice());
+	}
+	
+	public Integer getMarginPercentage() {
+		return Math.round(getMargin() * 100 / getCost()); 
 	}
 	
 	@Override
