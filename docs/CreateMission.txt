@@ -1,0 +1,12 @@
+ POST http://[ip]:8080/missions
+ 
+    {
+        "startDate": "2017-01-01",
+        "endDate": "2017-08-12",
+        "role": "Machine operator",
+        "sellingPrice": 1200,
+        "country": "Portugal",
+        "cost": 240,
+        "client": "http://[ip]:8080/clients/4",
+        "consultant": "http://[ip]:8080/consultants/20"
+   }

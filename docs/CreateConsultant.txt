@@ -1,0 +1,14 @@
+POST http://192.168.1.34:8080/consultants
+
+	{
+	"name": "AnotherConsultantFromEls",
+	"email": "jback@adneom.com",
+	"contact": "+32 123 45 67",
+	"hr": "Natalia",
+	"languages": "German, French, Dutch, English",
+	"hasCar": false,
+	"internal": false,
+	"skills": "Violin, Piano, Oboe, C#",
+	"businessManager": "businessManagers/2",
+	"package": 900
+	}

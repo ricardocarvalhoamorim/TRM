@@ -1,0 +1,14 @@
+ PUT  http://[ip]:8080/missions/11  
+ 
+ {
+        "id": 11,
+        "startDate": "2017-01-01",
+        "endDate": "2017-08-12",
+        "role": "Machine operator",
+        "sellingPrice": 1200,
+        "country": "China",
+        "cost": 240,
+        "clientId": 4,
+        "consultantId": 20,
+        "businessManagerId": 2
+   }

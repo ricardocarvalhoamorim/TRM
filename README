@@ -1,0 +1,6 @@
+In this project, the code for the backend of the TRM project can be found.
+
+It is using Spring Data and Spring Boot to define the rest services.
+
+To be clear about which rest requests are possible, some examples are given in the directory /docs
+
