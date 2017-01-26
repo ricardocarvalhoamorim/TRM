@@ -7,6 +7,7 @@ import org.springframework.data.rest.core.config.Projection;
 import com.adneom.trm.domain.BusinessManager;
 import com.adneom.trm.domain.Consultant;
 import com.adneom.trm.domain.Mission;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * When the missions should be returned again separately, this interface can be used to retrieve
@@ -32,6 +33,7 @@ public interface ConsultantWithMissionsProjection {
 	
 	public String getSkills();
 	public String getContact();
+	@JsonProperty("package")
 	public Integer getPackag();
 	public String getHr();
 	public String getLanguages();
